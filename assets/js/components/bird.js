@@ -24,9 +24,8 @@ export function createBird() {
     const type = getRandomBirdType();
     bird.classList.add(type);
 
-    game.appendChild(bird); // 🔥 adiciona no container correto
+    game.appendChild(bird); 
 
-    // Aguarda o browser calcular tamanho real
     const rect = bird.getBoundingClientRect();
 
     const maxHeight = game.clientHeight - rect.height;
