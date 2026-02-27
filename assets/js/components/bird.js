@@ -15,24 +15,28 @@ export function getRandomBirdType() {
 }
 
 export function createBird() {
-    const bird = document.createElement("img");
+    const game = document.getElementById("game");
 
+    const bird = document.createElement("img");
     bird.src = "assets/images/bird.gif";
     bird.classList.add("bird");
 
     const type = getRandomBirdType();
     bird.classList.add(type);
 
-    const maxHeight = window.innerHeight - 150;
+    game.appendChild(bird); // 🔥 adiciona no container correto
+
+    // Aguarda o browser calcular tamanho real
+    const rect = bird.getBoundingClientRect();
+
+    const maxHeight = game.clientHeight - rect.height;
     const randomY = Math.random() * maxHeight;
 
+    bird.style.position = "absolute";
     bird.style.top = randomY + "px";
-    bird.style.left = window.innerWidth + "px";
+    bird.style.left = game.clientWidth + "px";
 
-    document.body.appendChild(bird);
-
-    bird.addEventListener("click", function(event) {
-
+    bird.addEventListener("pointerdown", function(event) {
         if (this.classList.contains("bird-small")) {
             updatePoints(2);
         } else if (this.classList.contains("bird-medium")) {
@@ -42,7 +46,7 @@ export function createBird() {
         }
 
         createExplosion(event, this);
-        this.remove(); 
+        this.remove();
     });
 
     moveBird(bird, type);

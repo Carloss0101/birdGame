@@ -14,6 +14,7 @@ body {
     color: #fff;
     font-family: Arial, sans-serif;
     overflow: hidden;
+    touch-action: manipulation;
 }
 
 header {
@@ -32,6 +33,13 @@ nav {
     align-items: center;
     padding: 0px 10px;
     color: #ffaa00;
+}
+
+#game {
+    position: relative;
+    width: 100vw;
+    height: 100dvh;
+    overflow: hidden;
 }
 
 .bird {
