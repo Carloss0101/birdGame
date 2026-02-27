@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Game</title>
+</head>
+<body>
+    <header>
+        <nav><h2 id="timer">00:00</h2> <h2><span id="points">0</span> Pontos</h2></nav>
+    </header>
+
+    <main>
+        <div id="tsparticles"></div>
+        <div id="menu">
+            <div class="menu-card">
+                <h1 class="title">BIRD HUNTER</h1>
+
+                <p class="subtitle">Clique nos pássaros antes que o tempo acabe!</p>
+
+                <div class="score-box">
+                    <span>SCORE</span>
+                    <strong id="score">0</strong>
+                </div>
+
+                <button id="start-btn">Iniciar Jogo</button>
+            </div>
+        </div>
+        <div id="countdown"></div>
+    </main>
+
+    <script src="assets/js/game.js" type="module"></script>
+</body>
+</html>
