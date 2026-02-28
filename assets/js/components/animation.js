@@ -29,7 +29,7 @@ export function createExplosion(e, bird) {
     bird.style.visibility = "hidden";
 }
 
-export function moveBird(bird, type) {
+export function moveBirdLeft(bird, type) {
     let position = window.innerWidth;
 
     let speed;
@@ -40,6 +40,30 @@ export function moveBird(bird, type) {
 
     function animate() {
         position -= speed;
+        bird.style.left = position + "px";
+
+        if (position < -200) {
+            bird.remove();
+            return;
+        }
+
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+}
+
+export function moveBirdRight(bird, type) {
+    let position = -200;
+
+    let speed;
+
+    if (type === "bird-large") speed = 4;
+    if (type === "bird-medium") speed = 8;
+    if (type === "bird-small") speed = 10;
+
+    function animate() {
+        position += speed;
         bird.style.left = position + "px";
 
         if (position < -200) {

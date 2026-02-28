@@ -1,6 +1,6 @@
 import { createExplosion } from "./components/animation.js";
 import { updatePoints, getPoints } from "./components/nav.js";
-import { createBird } from "./components/bird.js";
+import { createBirdRigth, createBirdLeft} from "./components/bird.js";
 
 let timeLeft = 60; //secunds
 let timerInterval;
@@ -21,8 +21,9 @@ function startTimer() {
 
 function startSpawning() {
     spawnInterval = setInterval(() => {
-        createBird();
-    }, 1000);
+        createBirdRigth();
+        createBirdLeft();
+    }, 2000);
 }
 
 function endGame() {
@@ -72,8 +73,8 @@ function startCountdown(callback) {
 }
 
 function resetGame() {
-    timeLeft = 10;
-    timerElement.textContent = "00:10";
+    timeLeft = 60;
+    timerElement.textContent = "00:60";
 
     updatePoints(-getPoints()); 
 }
