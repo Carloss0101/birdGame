@@ -4,6 +4,12 @@
     box-sizing: border-box;
 }
 
+html, body {
+    user-select: none;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none;     /* Edge antigo */
+}
+
 body {
     background-image: url('../images/background.png');
     background-size: cover;          
@@ -40,6 +46,12 @@ nav {
     width: 100vw;
     height: 100dvh;
     overflow: hidden;
+}
+
+img {
+    pointer-events: auto;
+    user-drag: none;
+    -webkit-user-drag: none;
 }
 
 .bird {
