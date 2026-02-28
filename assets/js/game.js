@@ -2,7 +2,7 @@ import { createExplosion } from "./components/animation.js";
 import { updatePoints, getPoints } from "./components/nav.js";
 import { createBird } from "./components/bird.js";
 
-let timeLeft = 10; //secunds
+let timeLeft = 60; //secunds
 let timerInterval;
 let spawnInterval;
 
